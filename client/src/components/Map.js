@@ -4,8 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import differenceInMinutes from "date-fns/difference_in_minutes";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/DeleteTwoTone";
-//import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
-import useMediaQuery from "use-media-query-hook";
+import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
 
 import { Subscription } from "react-apollo";
 
@@ -44,11 +43,12 @@ const Map = ({ classes }) => {
 
   const [popup, setPopup] = useState(null);
   useEffect(() => {
-    const pinExists = popup && state.pins.findIndex(pin => pin._id === popup._id) > -1
+    const pinExists =
+      popup && state.pins.findIndex(pin => pin._id === popup._id) > -1;
     if (!pinExists) {
       setPopup(null);
     }
-  }, [state.pins.length])
+  }, [state.pins.length]);
 
   const getUserPosition = () => {
     if ("geolocation" in navigator) {
