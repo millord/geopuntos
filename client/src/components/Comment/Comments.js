@@ -25,7 +25,7 @@ const Comments = ({ comments, classes }) => (
                 color="textPrimary"
               >
                 {comment.author.name}
-              </Typography>
+              </Typography>{" "}
               · {distanceInWordsToNow(Number(comment.createdAt))} ago
             </>
           }
