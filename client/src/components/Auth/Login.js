@@ -35,7 +35,7 @@ const Login = ({ classes }) => {
   };
 
   return (
-    <div style={{ backgroundColor: "#46f257" }} className={classes.root}>
+    <div style={{ backgroundColor: "#14a10d" }} className={classes.root}>
       <Typography
         component="h1"
         variant="h3"
