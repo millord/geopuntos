@@ -45,6 +45,15 @@ const Login = ({ classes }) => {
       >
         Bienvenido!
       </Typography>
+      <Typography
+        component="h1"
+        variant="h6"
+        gutterBottom
+        noWrap
+        style={{ color: "rgb(242, 252, 252)" }}
+      >
+        Crea tus puntos, agregales imagenes y descripción!
+      </Typography>
       <GoogleLogin
         isSignedIn={true}
         onSuccess={onSuccess}
