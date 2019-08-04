@@ -10,14 +10,14 @@ import Context from "../context";
 import Signout from "../components/Auth/Signout";
 
 const Header = ({ classes }) => {
-  const mobileSize = useMediaQuery("max-width: 650px");
+  const mobileSize = useMediaQuery("(max-width: 650px)");
   const { state } = useContext(Context);
   const { currentUser } = state;
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          {/* Title / Logo*/}
+          {/* Title / Logo */}
           <div className={classes.grow}>
             <MapIcon className={classes.icon} />
             <Typography
@@ -30,7 +30,8 @@ const Header = ({ classes }) => {
               GeoPins
             </Typography>
           </div>
-          {/* Current user info   */}
+
+          {/* Current User Info */}
           {currentUser && (
             <div className={classes.grow}>
               <img
@@ -49,7 +50,7 @@ const Header = ({ classes }) => {
             </div>
           )}
 
-          {/*  Sign up button */}
+          {/* Signout Button */}
           <Signout />
         </Toolbar>
       </AppBar>

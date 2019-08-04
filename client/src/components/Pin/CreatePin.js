@@ -15,13 +15,13 @@ import { useClient } from "../../client";
 import { CREATE_PIN_MUTATION } from "../../graphql/mutations";
 
 const CreatePin = ({ classes }) => {
-  const mobileSize = useMediaQuery("max-width: 650px");
+  const mobileSize = useMediaQuery("(max-width: 650px)");
   const client = useClient();
   const { state, dispatch } = useContext(Context);
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [content, setContent] = useState("");
-  const [submtting, setSubmitting] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const handleDeleteDraft = () => {
     setTitle("");
@@ -34,9 +34,9 @@ const CreatePin = ({ classes }) => {
     const data = new FormData();
     data.append("file", image);
     data.append("upload_preset", "geopins");
-    data.append("cloud_name", "juanmillord");
+    data.append("cloud_name", "reedbargercodes");
     const res = await axios.post(
-      "https://api.cloudinary.com/v1_1/juanmillord/image/upload",
+      "https://api.cloudinary.com/v1_1/reedbargercodes/image/upload",
       data
     );
     return res.data.url;
@@ -46,18 +46,17 @@ const CreatePin = ({ classes }) => {
     try {
       event.preventDefault();
       setSubmitting(true);
-
       const url = await handleImageUpload();
       const { latitude, longitude } = state.draft;
       const variables = { title, image: url, content, latitude, longitude };
       await client.request(CREATE_PIN_MUTATION, variables);
-
       handleDeleteDraft();
     } catch (err) {
       setSubmitting(false);
       console.error("Error creating pin", err);
     }
   };
+
   return (
     <form className={classes.form}>
       <Typography
@@ -66,12 +65,12 @@ const CreatePin = ({ classes }) => {
         variant="h4"
         color="secondary"
       >
-        <LandscapeIcon className={classes.iconLarge} /> Pin a Location
+        <LandscapeIcon className={classes.iconLarge} /> Pin Location
       </Typography>
       <div>
         <TextField
           name="title"
-          label="title"
+          label="Title"
           placeholder="Insert pin title"
           onChange={e => setTitle(e.target.value)}
         />
@@ -112,7 +111,6 @@ const CreatePin = ({ classes }) => {
           variant="contained"
           color="primary"
         >
-          {" "}
           <ClearIcon className={classes.leftIcon} />
           Discard
         </Button>
@@ -121,12 +119,11 @@ const CreatePin = ({ classes }) => {
           className={classes.button}
           variant="contained"
           color="secondary"
-          disabled={!title.trim() || !content.trim() || !image || submtting}
+          disabled={!title.trim() || !content.trim() || !image || submitting}
           onClick={handleSubmit}
         >
-          {" "}
-          <SaveIcon className={classes.rightIcon} />
           Submit
+          <SaveIcon className={classes.rightIcon} />
         </Button>
       </div>
     </form>
