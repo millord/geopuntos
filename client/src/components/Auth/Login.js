@@ -46,13 +46,14 @@ const Login = ({ classes }) => {
         Bienvenido!
       </Typography>
       <Typography
+        className={classes.rootMobile}
         component="h1"
         variant="h6"
         gutterBottom
         noWrap
         style={{ color: "rgb(242, 252, 252)" }}
       >
-        Crea tus puntos, agregales imagenes y descripción!
+        Crea puntos y agregale fotos!
       </Typography>
       <GoogleLogin
         isSignedIn={true}
@@ -73,6 +74,11 @@ const styles = {
     justifyContent: "center",
     flexDirection: "column",
     alignItems: "center"
+  },
+  rootMobile: {
+    justifyContent: "center",
+    flexDirection: "row",
+    alignItems: "stretch"
   }
 };
 
