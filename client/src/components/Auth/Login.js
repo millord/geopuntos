@@ -41,7 +41,7 @@ const Login = ({ classes }) => {
         variant="h3"
         gutterBottom
         noWrap
-        style={{ color: "rgb(242, 252, 252)" }}
+        style={{ color: "rgb(50, 119, 168)" }}
       >
         Bienvenido!
       </Typography>
@@ -51,7 +51,7 @@ const Login = ({ classes }) => {
         variant="h6"
         gutterBottom
         noWrap
-        style={{ color: "rgb(242, 252, 252)" }}
+        style={{ color: "rgb(50, 119, 168)" }}
       >
         Crea puntos y agregale fotos!
       </Typography>
@@ -73,7 +73,8 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    background: "linear-gradient(to right, #78ffd6, #a8ff78)"
   },
   rootMobile: {
     justifyContent: "center",
