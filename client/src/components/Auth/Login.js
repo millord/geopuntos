@@ -35,15 +35,15 @@ const Login = ({ classes }) => {
   };
 
   return (
-    <div className={classes.root}>
+    <div style={{ backgroundColor: "#47c7c9" }} className={classes.root}>
       <Typography
         component="h1"
         variant="h3"
         gutterBottom
         noWrap
-        style={{ color: "rgb(66,133,244)" }}
+        style={{ color: "rgb(242, 252, 252)" }}
       >
-        Welcome!
+        Bienvenido!
       </Typography>
       <GoogleLogin
         isSignedIn={true}

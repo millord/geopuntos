@@ -22,12 +22,12 @@ const Header = ({ classes }) => {
             <MapIcon className={classes.icon} />
             <Typography
               className={mobileSize ? classes.mobile : ""}
-              component="h1"
+              component="h2"
               variant="h6"
               color="inherit"
               noWrap
             >
-              GeoPins
+              Geo-Puntos
             </Typography>
           </div>
 
