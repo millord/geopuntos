@@ -65,13 +65,13 @@ const CreatePin = ({ classes }) => {
         variant="h4"
         color="secondary"
       >
-        <LandscapeIcon className={classes.iconLarge} /> Pin Location
+        <LandscapeIcon className={classes.iconLarge} /> Ubicación del punto
       </Typography>
       <div>
         <TextField
           name="title"
-          label="Title"
-          placeholder="Insert pin title"
+          label="Título"
+          placeholder="Título del punto"
           onChange={e => setTitle(e.target.value)}
         />
         <input
@@ -112,7 +112,7 @@ const CreatePin = ({ classes }) => {
           color="primary"
         >
           <ClearIcon className={classes.leftIcon} />
-          Discard
+          Descartar
         </Button>
         <Button
           type="submit"

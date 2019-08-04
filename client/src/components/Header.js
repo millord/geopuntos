@@ -15,7 +15,7 @@ const Header = ({ classes }) => {
   const { currentUser } = state;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="secondary">
         <Toolbar>
           {/* Title / Logo */}
           <div className={classes.grow}>
@@ -69,7 +69,7 @@ const styles = theme => ({
   },
   icon: {
     marginRight: theme.spacing.unit,
-    color: "green",
+    color: "blue",
     fontSize: 45
   },
   mobile: {

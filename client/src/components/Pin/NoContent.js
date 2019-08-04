@@ -14,7 +14,7 @@ const NoContent = ({ classes }) => (
       color="textPrimary"
       gutterBottom
     >
-      Click on the map to add a pin
+      Click en el mapa para crear un punto
     </Typography>
   </div>
 );
